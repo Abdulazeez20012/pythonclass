@@ -10,4 +10,4 @@ print("                   ")
 print(f"Radius: {radius}")
 print(f"Diameter: {diameter}")
 print(f"Circumference: {circumference:.2f}")
-print(f"Area: {area:.2f}"
+print(f"Area: {area:.2f}")
