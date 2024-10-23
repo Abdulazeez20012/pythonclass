@@ -1,4 +1,4 @@
-def add_numbers():
+add_numbers():
 while True:
 num1 = int(input("Enter first number: "))
 num2 = int(input("Enter second number: "))

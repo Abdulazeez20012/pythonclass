@@ -1,4 +1,4 @@
-def calculate_power(base, exponent):
+calculate_power(base, exponent):
     result = 1
     for _ in range(exponent):
         result *= base
