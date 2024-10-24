@@ -1,0 +1,7 @@
+print('+"""""+')
+print('[|O O|]')
+print(' | ^ |')
+print(' |\'_\'|')
+print(' |   |')
+print(' |   |')
+print('+-----+')
