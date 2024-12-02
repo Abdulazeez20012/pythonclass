@@ -1,0 +1,14 @@
+def get_occurences(char,string):
+	occurrence_counter = 0
+
+	for letter in string:
+		if letter == char:
+			occurrence_counter+=1
+	return occurence_counter
+
+
+String= input("Enter anything: ")
+char=input("Enter the character to be checked:  ")
+
+print(get_occurences(char,string))
+

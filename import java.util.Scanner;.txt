@@ -1,0 +1,76 @@
+import java.util.Scanner;
+   public class MBTITest {
+      public static void main(String[] args){
+
+
+
+	String[] question = { 
+
+		"1. \nA expend energy , enjoy groups.(E)\nB cooncerve energy. (I)",
+
+		"2. \nA interprete litterally.(S)\nB look for meaning and posibilities. (N) 
+
+		"3. \nA Logical,Thinking,Questioning .(T)\nB Empthatic,Feeling, Accomodating. (F)"
+
+		"4. \nA Organized,Orderly.(J)\nB Flexible,Adaptable. (P)"
+
+		"5. \nA More out going,Think out loud.(E)\nB More reserved,Think to yourself. (I)"
+
+		"6. \nA Practical,realitistic,expeicial.(S)\nB immaginative,innovative,Theoriotical. (N)"
+
+		"7. \nA candid,straight forward,frank.(T)\nB tactful,kind,Encouraging. (F)"
+
+		"8. \nA plan,schedule.(J)\nB unplanned,sponteneous. (P)"
+
+		"9. \nA seek many task ,public activites interaction with others.(E)\nB seek private,.solitary activities and quiet for conctration(I)",
+
+		"10. \nA standard,usual,convensional.(S)\nB different ,novel, uniquetmf. (N) 
+
+		"11. \nA expend energy , enjoy groups.(T)\nB cooncerve energy. (F)"
+
+		"12. \nA expend energy , enjoy groups.(J)\nB cooncerve energy. (P)"
+
+		"13. \nA expend energy , enjoy groups.(E)\nB cooncerve energy. (I)"
+
+		"14. \nA expend energy , enjoy groups.(S)\nB cooncerve energy. (N)"
+
+		"15. \nA expend energy , enjoy groups.(T)\nB cooncerve energy. (F)"
+
+		"16. \nA expend energy , enjoy groups.(J)\nB cooncerve energy. (P)"
+
+		"17. \nA expend energy , enjoy groups.(E)\nB cooncerve energy. (I)",
+
+		"18. \nA interprete litterally.(S)\nB look for meaning and posibilities. (N) 
+
+		"19. \nA expend energy , enjoy groups.(T)\nB cooncerve energy. (F)"
+
+		"20. \nA expend energy , enjoy groups.(J)\nB cooncerve energy. (P)"
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+}

@@ -1,0 +1,32 @@
+student_names = []
+student_scores {
+	'py' : []
+	'jv' : []
+	'ds' : []
+	'dt : []
+LIMIT = 10
+Count = 0
+while count < LIMIT:
+	name = input(f"Enter student_{Count+1} name:\n> ")
+	student_name.append(name)
+
+	for key value;
+	name = input("Enter Student's name :\n> ")
+	score = input(f"Enter score for '(key)':\n> ")
+
+	student_scores[key].append(score)
+
+
+	print(student_names , student_scores)
+
+
+
+
+
+
+
+
+
+
+
+}
