@@ -2,7 +2,7 @@ def main():
     diary_ids = []
     diary_contents = [] 
     is_locked = False
-    password = "password123" 
+    password = "A.z24434" 
     entry_count = 0
 
     while True:

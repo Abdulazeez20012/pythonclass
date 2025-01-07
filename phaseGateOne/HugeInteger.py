@@ -1,5 +1,11 @@
 def add_large_numbers(num1, num2):
 
+    num1 = input("Enter first huge number (up to 40 digits): ")
+    num2 = input("Enter second huge number (up to 40 digits): ")
+
+    result = add_large_numbers(num1, num2)
+
+
     number1 = [0] * 40
     number2 = [0] * 40
     sum_digits = [0] * 40
@@ -32,9 +38,6 @@ def add_large_numbers(num1, num2):
     return result
 
 if __name__ == "__main__":
-    num1 = input("Enter first huge number (up to 40 digits): ")
-    num2 = input("Enter second huge number (up to 40 digits): ")
-
-    result = add_large_numbers(num1, num2)
+    
 
     print("Sum: " + result)

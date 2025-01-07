@@ -2,22 +2,22 @@ def compound_interest_calculator():
     initial_investment = float(input("Enter initial investment: "))
     
 
-    monthly_contribution = float(input("Enter monthly contribution (positive for deposit, negative for withdrawal): "))
+    monthly_contribution = float(input("Enter monthly contribution:  "))
     
   
     years = int(input("Enter length of time in years: "))
     
 
-    interest_rate = float(input("Enter annual interest rate (as decimal, e.g., 5% = 0.05): "))
+    interest_rate = float(input("Enter annual interest rate: "))
     
    
-    variance = float(input("Enter interest rate variance range (e.g., 0.02 for ±2%): "))
+    variance = float(input("Enter interest rate variance range: "))
     
 
-    compound_frequency = int(input("Enter compound frequency (times per year, e.g., 1 for annually, 4 for quarterly): "))
+    compound_frequency = int(input("Enter compound frequency: "))
     
    
-    print("\nCalculating compound interest for the following scenarios:")
+    print("\nCalculating compound interest:")
     for rate in [interest_rate - variance, interest_rate + variance]:
         total_amount = initial_investment
         monthly_rate = rate / compound_frequency
