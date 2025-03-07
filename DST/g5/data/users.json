@@ -1,0 +1,51 @@
+[
+  {
+    "type": "Student",
+    "email": "abdulazeez24434@gmail.com",
+    "password": "24434",
+    "name": "abdul azeez",
+    "id": "101"
+  },
+  {
+    "type": "Professor",
+    "email": "saka2222@gmail.com",
+    "password": "2222",
+    "name": "saka",
+    "id": "111"
+  },
+  {
+    "type": "Student",
+    "email": "naira2333@gmail.com",
+    "password": "24434",
+    "name": "abdul azeez",
+    "id": "c101"
+  },
+  {
+    "type": "Student",
+    "email": "55",
+    "password": "76",
+    "name": "87",
+    "id": "97"
+  },
+  {
+    "type": "Student",
+    "email": "jbljn",
+    "password": "lnlkn",
+    "name": "nn;",
+    "id": "n;n"
+  },
+  {
+    "type": "Student",
+    "email": "azeez@gmai.com",
+    "password": "24434",
+    "name": "az",
+    "id": "C101"
+  },
+  {
+    "type": "Professor",
+    "email": "ighoe571@gmail.com",
+    "password": "12345678",
+    "name": "igho",
+    "id": "12"
+  }
+]

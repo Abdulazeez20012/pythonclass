@@ -18,7 +18,9 @@ def register_user():
             continue
         break
 
-    while True:
+    password = input('Enter your password: ')
+
+    while not re.fullmatch(r'\w{8,}', password):
         password = input('Enter your password: ')
         if not password:
             print('Password is required.')
@@ -45,6 +47,8 @@ def validate_user(username, password):
 def login_user (username, password):
     username = input('Enter your username: ').strip()
     password = input('Enter your password: ').strip()
+    while not re.fullmatch(r'\w{8,}', password):
+        password = input('Enter your password: ')
     if validate_user(username, password):
         print("Logged in!")
     else:
@@ -67,7 +71,4 @@ def main():
             print("Thank you!")
 
 
-#main()
-password = input('Enter your password: ')
-while not re.fullmatch(r'\w{8,}' , password):
-    password = input('Enter your password: ')
+main()

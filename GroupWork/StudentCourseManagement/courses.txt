@@ -1,0 +1,1 @@
+{"course_name": "Math 101", "instructor": "instructor@example.com", "students": ["student@example.com"], "grades": {}}
