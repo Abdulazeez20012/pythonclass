@@ -1,0 +1,12 @@
+[
+    {
+        "email": "sk24434@gmail.com",
+        "password_hash": "$2b$12$TII.Vo/X8NdM3W/YNA2Zq..IDn0vp4B7q5E66iXZyPB7.oSLcOoFq",
+        "courses": [
+            "java",
+            "python",
+            "data science",
+            "javaScript"
+        ]
+    }
+]

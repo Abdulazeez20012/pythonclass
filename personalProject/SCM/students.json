@@ -1,0 +1,25 @@
+[
+    {
+        "email": "abdulazeez@gmail.com",
+        "password_hash": "$2b$12$S6G.3iffkJwW9l0RZFgGm.TUhCD/yGKuQDq2GNCqKpxVL3bqGxZNG",
+        "courses": {}
+    },
+    {
+        "email": "azeez24434@gmail.com",
+        "password_hash": "$2b$12$USjmmU9qEAxwOgUtW.mmSuMXaplnVuwVXGdSe5OfeP6eoSbGvG6ga",
+        "courses": {
+            "python": 100.0,
+            "java": 80.0,
+            "data science": null,
+            "javaScript": 100.0,
+            "....": null,
+            "": null,
+            "al;ln;m;'pk    ------ 11111 =====++": null
+        }
+    },
+    {
+        "email": "semicolon@gmail.com",
+        "password_hash": "$2b$12$zNiMQVURz0/gidMKvBwSXeLWQ66BZh4YiFtpg6z3qzsI8ZvalxNH2",
+        "courses": {}
+    }
+]
