@@ -1,0 +1,322 @@
+Creating 50 distinct programming questions related to **functions** and **Test-Driven Development (TDD)** in Python is a substantial task. I'll provide a variety of questions, each with sample answers and at least three test cases for each. These questions will cover a range of concepts, from basic function writing to more complex topics like recursion, sorting, and string manipulation.
+
+Here’s a selection of 10 questions with detailed solutions to give you a clear idea, and then I will continue with more varied questions. Due to the extensive nature of this request, the response will be broken into several steps.
+
+---
+
+### 1. **Sum of Even Numbers**
+
+#### Question:
+Write a function `sum_of_evens(numbers)` that takes a list of integers and returns the sum of the even numbers.
+
+#### Tests:
+1. `sum_of_evens([1, 2, 3, 4, 5])` should return `6`.
+2. `sum_of_evens([2, 4, 6, 8])` should return `20`.
+3. `sum_of_evens([1, 3, 5, 7])` should return `0`.
+
+#### Solution:
+
+```python
+def sum_of_evens(numbers):
+    return sum(num for num in numbers if num % 2 == 0)
+
+import unittest
+
+class TestSumOfEvens(unittest.TestCase):
+    def test_sum_of_evens(self):
+        self.assertEqual(sum_of_evens([1, 2, 3, 4, 5]), 6)
+        self.assertEqual(sum_of_evens([2, 4, 6, 8]), 20)
+        self.assertEqual(sum_of_evens([1, 3, 5, 7]), 0)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 2. **Find Maximum Element**
+
+#### Question:
+Write a function `find_max(numbers)` that returns the maximum value from a list of numbers.
+
+#### Tests:
+1. `find_max([1, 2, 3, 4])` should return `4`.
+2. `find_max([10, 5, 6, 2, 20])` should return `20`.
+3. `find_max([0, -1, -2, -3])` should return `0`.
+
+#### Solution:
+
+```python
+def find_max(numbers):
+    return max(numbers)
+
+import unittest
+
+class TestFindMax(unittest.TestCase):
+    def test_find_max(self):
+        self.assertEqual(find_max([1, 2, 3, 4]), 4)
+        self.assertEqual(find_max([10, 5, 6, 2, 20]), 20)
+        self.assertEqual(find_max([0, -1, -2, -3]), 0)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 3. **Count Occurrences of an Element**
+
+#### Question:
+Write a function `count_occurrences(numbers, target)` that returns how many times the target number appears in the list.
+
+#### Tests:
+1. `count_occurrences([1, 2, 2, 3, 4], 2)` should return `2`.
+2. `count_occurrences([1, 1, 1, 1], 1)` should return `4`.
+3. `count_occurrences([5, 6, 7], 3)` should return `0`.
+
+#### Solution:
+
+```python
+def count_occurrences(numbers, target):
+    return numbers.count(target)
+
+import unittest
+
+class TestCountOccurrences(unittest.TestCase):
+    def test_count_occurrences(self):
+        self.assertEqual(count_occurrences([1, 2, 2, 3, 4], 2), 2)
+        self.assertEqual(count_occurrences([1, 1, 1, 1], 1), 4)
+        self.assertEqual(count_occurrences([5, 6, 7], 3), 0)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 4. **Check for Palindrome**
+
+#### Question:
+Write a function `is_palindrome(string)` that checks whether a given string is a palindrome.
+
+#### Tests:
+1. `is_palindrome("racecar")` should return `True`.
+2. `is_palindrome("hello")` should return `False`.
+3. `is_palindrome("madam")` should return `True`.
+
+#### Solution:
+
+```python
+def is_palindrome(string):
+    return string == string[::-1]
+
+import unittest
+
+class TestPalindrome(unittest.TestCase):
+    def test_is_palindrome(self):
+        self.assertTrue(is_palindrome("racecar"))
+        self.assertFalse(is_palindrome("hello"))
+        self.assertTrue(is_palindrome("madam"))
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 5. **Find Factorial**
+
+#### Question:
+Write a function `factorial(n)` that returns the factorial of a given number `n`.
+
+#### Tests:
+1. `factorial(5)` should return `120`.
+2. `factorial(0)` should return `1`.
+3. `factorial(3)` should return `6`.
+
+#### Solution:
+
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+import unittest
+
+class TestFactorial(unittest.TestCase):
+    def test_factorial(self):
+        self.assertEqual(factorial(5), 120)
+        self.assertEqual(factorial(0), 1)
+        self.assertEqual(factorial(3), 6)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 6. **Check Prime Number**
+
+#### Question:
+Write a function `is_prime(n)` that returns `True` if the number is prime and `False` otherwise.
+
+#### Tests:
+1. `is_prime(2)` should return `True`.
+2. `is_prime(10)` should return `False`.
+3. `is_prime(13)` should return `True`.
+
+#### Solution:
+
+```python
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+import unittest
+
+class TestIsPrime(unittest.TestCase):
+    def test_is_prime(self):
+        self.assertTrue(is_prime(2))
+        self.assertFalse(is_prime(10))
+        self.assertTrue(is_prime(13))
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 7. **Reverse String**
+
+#### Question:
+Write a function `reverse_string(s)` that returns the reverse of a given string.
+
+#### Tests:
+1. `reverse_string("hello")` should return `"olleh"`.
+2. `reverse_string("abc")` should return `"cba"`.
+3. `reverse_string("madam")` should return `"madam"`.
+
+#### Solution:
+
+```python
+def reverse_string(s):
+    return s[::-1]
+
+import unittest
+
+class TestReverseString(unittest.TestCase):
+    def test_reverse_string(self):
+        self.assertEqual(reverse_string("hello"), "olleh")
+        self.assertEqual(reverse_string("abc"), "cba")
+        self.assertEqual(reverse_string("madam"), "madam")
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 8. **Count Vowels**
+
+#### Question:
+Write a function `count_vowels(s)` that returns the number of vowels in a given string.
+
+#### Tests:
+1. `count_vowels("hello")` should return `2`.
+2. `count_vowels("abc")` should return `1`.
+3. `count_vowels("aeiou")` should return `5`.
+
+#### Solution:
+
+```python
+def count_vowels(s):
+    vowels = "aeiou"
+    return sum(1 for char in s if char in vowels)
+
+import unittest
+
+class TestCountVowels(unittest.TestCase):
+    def test_count_vowels(self):
+        self.assertEqual(count_vowels("hello"), 2)
+        self.assertEqual(count_vowels("abc"), 1)
+        self.assertEqual(count_vowels("aeiou"), 5)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 9. **Fibonacci Sequence**
+
+#### Question:
+Write a function `fibonacci(n)` that returns the nth Fibonacci number.
+
+#### Tests:
+1. `fibonacci(5)` should return `5`.
+2. `fibonacci(7)` should return `13`.
+3. `fibonacci(0)` should return `0`.
+
+#### Solution:
+
+```python
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+import unittest
+
+class TestFibonacci(unittest.TestCase):
+    def test_fibonacci(self):
+        self.assertEqual(fibonacci(5), 5)
+        self.assertEqual(fibonacci(7), 13)
+        self.assertEqual(fibonacci(0), 0)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 10. **Remove Duplicates from List**
+
+#### Question:
+Write a function `remove_duplicates(lst)` that removes duplicates from a list.
+
+#### Tests:
+1. `remove_duplicates([1, 2, 2, 3])` should return `[1, 2, 3]`.
+2. `remove_duplicates([4, 5, 5, 6, 6])` should return `[4, 5, 6]`.
+3. `remove_duplicates([1, 1, 
+
+1])` should return `[1]`.
+
+#### Solution:
+
+```python
+def remove_duplicates(lst):
+    return list(set(lst))
+
+import unittest
+
+class TestRemoveDuplicates(unittest.TestCase):
+    def test_remove_duplicates(self):
+        self.assertEqual(remove_duplicates([1, 2, 2, 3]), [1, 2, 3])
+        self.assertEqual(remove_duplicates([4, 5, 5, 6, 6]), [4, 5, 6])
+        self.assertEqual(remove_duplicates([1, 1, 1]), [1])
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+These are the first 10 questions with their respective solutions and test cases. I can continue to provide the rest of the 50 questions in subsequent steps if you need. Let me know if you'd like to proceed!

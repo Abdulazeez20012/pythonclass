@@ -1,0 +1,314 @@
+Great! Let's continue with questions 21–30. Here are the next set of questions, each with their respective solutions and test cases.
+
+---
+
+### 21. **Find the Average of a List of Numbers**
+
+#### Question:
+Write a function `average(lst)` that returns the average (mean) of a list of numbers.
+
+#### Tests:
+1. `average([1, 2, 3, 4])` should return `2.5`.
+2. `average([10, 20, 30])` should return `20.0`.
+3. `average([1])` should return `1.0`.
+
+#### Solution:
+
+```python
+def average(lst):
+    return sum(lst) / len(lst) if lst else 0
+
+import unittest
+
+class TestAverage(unittest.TestCase):
+    def test_average(self):
+        self.assertEqual(average([1, 2, 3, 4]), 2.5)
+        self.assertEqual(average([10, 20, 30]), 20.0)
+        self.assertEqual(average([1]), 1.0)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 22. **Find the Index of an Element**
+
+#### Question:
+Write a function `find_index(lst, val)` that returns the index of the first occurrence of `val` in the list `lst`. If the value is not found, return `-1`.
+
+#### Tests:
+1. `find_index([1, 2, 3, 4], 3)` should return `2`.
+2. `find_index([10, 20, 30], 20)` should return `1`.
+3. `find_index([5, 6, 7], 8)` should return `-1`.
+
+#### Solution:
+
+```python
+def find_index(lst, val):
+    try:
+        return lst.index(val)
+    except ValueError:
+        return -1
+
+import unittest
+
+class TestFindIndex(unittest.TestCase):
+    def test_find_index(self):
+        self.assertEqual(find_index([1, 2, 3, 4], 3), 2)
+        self.assertEqual(find_index([10, 20, 30], 20), 1)
+        self.assertEqual(find_index([5, 6, 7], 8), -1)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 23. **Merge Two Lists**
+
+#### Question:
+Write a function `merge_lists(list1, list2)` that merges two lists into one list.
+
+#### Tests:
+1. `merge_lists([1, 2], [3, 4])` should return `[1, 2, 3, 4]`.
+2. `merge_lists([5, 6], [7, 8])` should return `[5, 6, 7, 8]`.
+3. `merge_lists([], [1, 2])` should return `[1, 2]`.
+
+#### Solution:
+
+```python
+def merge_lists(list1, list2):
+    return list1 + list2
+
+import unittest
+
+class TestMergeLists(unittest.TestCase):
+    def test_merge_lists(self):
+        self.assertEqual(merge_lists([1, 2], [3, 4]), [1, 2, 3, 4])
+        self.assertEqual(merge_lists([5, 6], [7, 8]), [5, 6, 7, 8])
+        self.assertEqual(merge_lists([], [1, 2]), [1, 2])
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 24. **Find the GCD of Two Numbers**
+
+#### Question:
+Write a function `gcd(a, b)` that returns the greatest common divisor (GCD) of two numbers.
+
+#### Tests:
+1. `gcd(10, 5)` should return `5`.
+2. `gcd(15, 25)` should return `5`.
+3. `gcd(7, 3)` should return `1`.
+
+#### Solution:
+
+```python
+import math
+
+def gcd(a, b):
+    return math.gcd(a, b)
+
+import unittest
+
+class TestGCD(unittest.TestCase):
+    def test_gcd(self):
+        self.assertEqual(gcd(10, 5), 5)
+        self.assertEqual(gcd(15, 25), 5)
+        self.assertEqual(gcd(7, 3), 1)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 25. **Check if a String is a Substring**
+
+#### Question:
+Write a function `is_substring(s, substring)` that checks if `substring` is present in the string `s`.
+
+#### Tests:
+1. `is_substring("hello", "ell")` should return `True`.
+2. `is_substring("python", "java")` should return `False`.
+3. `is_substring("substring", "sub")` should return `True`.
+
+#### Solution:
+
+```python
+def is_substring(s, substring):
+    return substring in s
+
+import unittest
+
+class TestIsSubstring(unittest.TestCase):
+    def test_is_substring(self):
+        self.assertTrue(is_substring("hello", "ell"))
+        self.assertFalse(is_substring("python", "java"))
+        self.assertTrue(is_substring("substring", "sub"))
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 26. **Find the Second Largest Element in a List**
+
+#### Question:
+Write a function `second_largest(lst)` that returns the second largest element in a list.
+
+#### Tests:
+1. `second_largest([1, 2, 3, 4])` should return `3`.
+2. `second_largest([10, 5, 7, 15])` should return `10`.
+3. `second_largest([5, 5, 5])` should return `5`.
+
+#### Solution:
+
+```python
+def second_largest(lst):
+    unique_lst = list(set(lst))
+    unique_lst.sort()
+    return unique_lst[-2] if len(unique_lst) > 1 else None
+
+import unittest
+
+class TestSecondLargest(unittest.TestCase):
+    def test_second_largest(self):
+        self.assertEqual(second_largest([1, 2, 3, 4]), 3)
+        self.assertEqual(second_largest([10, 5, 7, 15]), 10)
+        self.assertEqual(second_largest([5, 5, 5]), 5)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 27. **Remove Whitespace from a String**
+
+#### Question:
+Write a function `remove_whitespace(s)` that removes all whitespace characters from a string.
+
+#### Tests:
+1. `remove_whitespace("hello world")` should return `"helloworld"`.
+2. `remove_whitespace("  python  ")` should return `"python"`.
+3. `remove_whitespace("  test")` should return `"test"`.
+
+#### Solution:
+
+```python
+def remove_whitespace(s):
+    return ''.join(s.split())
+
+import unittest
+
+class TestRemoveWhitespace(unittest.TestCase):
+    def test_remove_whitespace(self):
+        self.assertEqual(remove_whitespace("hello world"), "helloworld")
+        self.assertEqual(remove_whitespace("  python  "), "python")
+        self.assertEqual(remove_whitespace("  test"), "test")
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 28. **Check if List is Sorted**
+
+#### Question:
+Write a function `is_sorted(lst)` that checks if a list is sorted in ascending order.
+
+#### Tests:
+1. `is_sorted([1, 2, 3])` should return `True`.
+2. `is_sorted([3, 2, 1])` should return `False`.
+3. `is_sorted([1, 1, 1])` should return `True`.
+
+#### Solution:
+
+```python
+def is_sorted(lst):
+    return lst == sorted(lst)
+
+import unittest
+
+class TestIsSorted(unittest.TestCase):
+    def test_is_sorted(self):
+        self.assertTrue(is_sorted([1, 2, 3]))
+        self.assertFalse(is_sorted([3, 2, 1]))
+        self.assertTrue(is_sorted([1, 1, 1]))
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 29. **Find Unique Elements in a List**
+
+#### Question:
+Write a function `unique_elements(lst)` that returns a list of unique elements from the given list.
+
+#### Tests:
+1. `unique_elements([1, 2, 2, 3])` should return `[1, 2, 3]`.
+2. `unique_elements([5, 5, 5, 6, 7])` should return `[5, 6, 7]`.
+3. `unique_elements([9, 9, 9])` should return `[9]`.
+
+#### Solution:
+
+```python
+def unique_elements(lst):
+    return list(set(lst))
+
+import unittest
+
+class TestUniqueElements(unittest.TestCase):
+    def test_unique_elements(self):
+        self.assertEqual(unique_elements([1, 2, 2, 3]), [1, 2, 3])
+        self.assertEqual(unique_elements([5, 5, 5, 6, 7]), [5, 6, 7])
+        self.assertEqual(unique_elements([9, 9, 9]), [9])
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 30. **Calculate the Power of a Number**
+
+#### Question:
+Write a function `power(base, exponent)` that returns the
+
+ result of raising `base` to the power of `exponent`.
+
+#### Tests:
+1. `power(2, 3)` should return `8`.
+2. `power(5, 0)` should return `1`.
+3. `power(7, -1)` should return `0.14285714285714285`.
+
+#### Solution:
+
+```python
+def power(base, exponent):
+    return base ** exponent
+
+import unittest
+
+class TestPower(unittest.TestCase):
+    def test_power(self):
+        self.assertEqual(power(2, 3), 8)
+        self.assertEqual(power(5, 0), 1)
+        self.assertEqual(power(7, -1), 0.14285714285714285)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+This concludes questions 21-30. Would you like to proceed with the next set of questions (31-40)?

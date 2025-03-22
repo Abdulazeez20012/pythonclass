@@ -1,0 +1,310 @@
+Here are some questions related to functions and Test-Driven Development (TDD) with their answers in Python.
+
+### Question 1: What is the purpose of TDD (Test-Driven Development)?
+
+**Answer**:  
+Test-Driven Development (TDD) is a software development process where tests are written before the actual code. The cycle follows three steps:
+1. **Write a failing test**: Create a test for the function that initially fails.
+2. **Write the minimal code to pass the test**: Implement just enough code to make the test pass.
+3. **Refactor**: Clean up the code while ensuring the tests still pass.
+
+TDD helps ensure that the code is thoroughly tested and reduces the likelihood of bugs.
+
+---
+
+### Question 2: How do you write a test for a simple function that adds two numbers?
+
+**Answer**:  
+To test a simple function that adds two numbers, we would write the following test before writing the function itself.
+
+**Test**:
+```python
+def test_add_numbers():
+    assert add_numbers(2, 3) == 5
+    assert add_numbers(-1, 1) == 0
+    assert add_numbers(0, 0) == 0
+```
+
+**Function**:
+```python
+def add_numbers(a, b):
+    return a + b
+```
+
+---
+
+### Question 3: What does the `assert` keyword do in a test?
+
+**Answer**:  
+The `assert` keyword is used in testing to check if a condition is true. If the condition is false, it raises an `AssertionError`. It is commonly used in TDD to validate that the function's output matches the expected result.
+
+For example:
+```python
+assert add_numbers(2, 3) == 5
+```
+This checks if `add_numbers(2, 3)` equals `5`. If not, the test will fail.
+
+---
+
+### Question 4: How can you test a function that returns the maximum value from a list?
+
+**Answer**:  
+You would write a test that checks various scenarios, such as when the list has both positive and negative values, when the list has one element, and when all elements are the same.
+
+**Test**:
+```python
+def test_max_value():
+    assert max_value([1, 2, 3, 4]) == 4
+    assert max_value([-1, -2, -3]) == -1
+    assert max_value([7]) == 7
+    assert max_value([3, 3, 3]) == 3
+```
+
+**Function**:
+```python
+def max_value(lst):
+    return max(lst)
+```
+
+---
+
+### Question 5: How do you refactor code in TDD?
+
+**Answer**:  
+Refactoring in TDD means improving the code without changing its behavior. After the test passes, you might clean up your code by removing redundancies, improving readability, or optimizing the function.
+
+For example:
+Before refactoring:
+```python
+def add_numbers(a, b):
+    if a == 0: 
+        return b
+    if b == 0: 
+        return a
+    return a + b
+```
+
+Refactored code:
+```python
+def add_numbers(a, b):
+    return a + b
+```
+
+After refactoring, you would run the tests again to ensure that everything still works as expected.
+
+---
+
+### Question 6: What is the purpose of using `unittest` in Python for TDD?
+
+**Answer**:  
+`unittest` is a testing framework in Python that helps automate and organize test cases. It provides features like running multiple tests, checking for errors, and organizing tests into classes.
+
+For example, a simple test using `unittest`:
+```python
+import unittest
+
+def add_numbers(a, b):
+    return a + b
+
+class TestAddNumbers(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add_numbers(2, 3), 5)
+        self.assertEqual(add_numbers(-1, 1), 0)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### Question 7: How would you test if a string is a palindrome?
+
+**Answer**:  
+A palindrome is a word that reads the same forwards and backwards. We can test this by comparing the string to its reverse.
+
+**Test**:
+```python
+def test_is_palindrome():
+    assert is_palindrome("madam") == True
+    assert is_palindrome("hello") == False
+    assert is_palindrome("racecar") == True
+```
+
+**Function**:
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+```
+
+---
+
+### Question 8: How do you handle edge cases in TDD?
+
+**Answer**:  
+Edge cases are situations that may not be typical but should still be accounted for. In TDD, edge cases are tested by writing specific test cases to handle them.
+
+For example, testing a function that calculates the square root:
+```python
+def test_square_root():
+    assert square_root(9) == 3
+    assert square_root(0) == 0
+    assert square_root(1) == 1
+    assert square_root(-4) == "Cannot compute the square root of a negative number"
+```
+
+**Function**:
+```python
+import math
+
+def square_root(n):
+    if n < 0:
+        return "Cannot compute the square root of a negative number"
+    return math.sqrt(n)
+```
+
+---
+
+### Question 9: How do you test a function that filters out even numbers from a list?
+
+**Answer**:  
+You would write tests to check various inputs: a list of even and odd numbers, an empty list, and a list with no even numbers.
+
+**Test**:
+```python
+def test_filter_even_numbers():
+    assert filter_even_numbers([1, 2, 3, 4]) == [2, 4]
+    assert filter_even_numbers([1, 3, 5]) == []
+    assert filter_even_numbers([2, 4, 6]) == [2, 4, 6]
+    assert filter_even_numbers([]) == []
+```
+
+**Function**:
+```python
+def filter_even_numbers(nums):
+    return [num for num in nums if num % 2 == 0]
+```
+
+---
+
+### Question 10: What should you do if a test fails in TDD?
+
+**Answer**:  
+If a test fails, you should:
+1. Check the test to ensure it's correct.
+2. Modify the implementation code to make the test pass.
+3. Refactor the code if necessary and re-run the tests.
+
+The key in TDD is to only modify the code to meet the test requirements, not to change the test to fit the code.
+
+---
+
+### Question 11: How do you test if a function correctly handles an empty string?
+
+**Answer**:  
+To test an empty string, you can create a test case specifically for that scenario.
+
+**Test**:
+```python
+def test_empty_string():
+    assert is_palindrome("") == True  # An empty string is a palindrome by definition
+    assert reverse_string("") == ""  # Reversing an empty string should return an empty string
+```
+
+**Function**:
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+
+def reverse_string(s):
+    return s[::-1]
+```
+
+---
+
+### Question 12: What is a mock in testing, and why would you use it?
+
+**Answer**:  
+A mock is an object that simulates the behavior of real objects in a controlled way. It is useful for testing components that rely on external systems (like databases, APIs, or other services). Mocks help isolate the function under test by simulating external dependencies.
+
+For example, testing a function that fetches data from a web service:
+```python
+from unittest.mock import Mock
+
+def fetch_data(url):
+    # Assume this function makes a real network call
+    pass
+
+def test_fetch_data():
+    mock_fetch = Mock(return_value={'data': 'mocked data'})
+    assert fetch_data('https://api.example.com') == {'data': 'mocked data'}
+```
+
+---
+
+### Question 13: How would you test a function that calculates the factorial of a number?
+
+**Answer**:
+You would test edge cases like `0`, positive numbers, and larger numbers.
+
+**Test**:
+```python
+def test_factorial():
+    assert factorial(5) == 120
+    assert factorial(0) == 1
+    assert factorial(3) == 6
+    assert factorial(7) == 5040
+```
+
+**Function**:
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+```
+
+---
+
+### Question 14: How can you test if two lists have the same elements in any order?
+
+**Answer**:
+You can sort both lists and then compare them.
+
+**Test**:
+```python
+def test_same_elements():
+    assert same_elements([1, 2, 3], [3, 2, 1]) == True
+    assert same_elements([1, 2, 3], [4, 5, 6]) == False
+    assert same_elements([7, 8, 9], [9, 7, 8]) == True
+```
+
+**Function**:
+```python
+def same_elements(list1, list2):
+    return sorted(list1) == sorted(list2)
+```
+
+---
+
+### Question 15: How do you test for performance in TDD?
+
+**Answer**:  
+Performance testing is typically done separately from regular TDD, but it can be included in the testing process. You would write tests that track the execution time for operations or methods.
+
+
+
+For example, testing the performance of sorting a large list:
+```python
+import time
+
+def test_sorting_performance():
+    start_time = time.time()
+    sorted_list = sorted(range(10000, 0, -1))
+    end_time = time.time()
+    assert end_time - start_time < 1  # Sorting should take less than 1 second
+```
+
+---
+
+### Conclusion
+These questions and answers provide a comprehensive overview of testing and TDD in Python. They cover topics such as writing tests, handling edge cases, testing specific functions, using mocks, and testing performance.

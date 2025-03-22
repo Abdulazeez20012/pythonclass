@@ -1,0 +1,320 @@
+Great! Let’s continue with questions 41-50. Here are the next set of programming questions with their respective solutions and test cases.
+
+---
+
+### 41. **Count the Occurrences of an Element in a List**
+
+#### Question:
+Write a function `count_occurrences(lst, val)` that returns the number of occurrences of `val` in the list `lst`.
+
+#### Tests:
+1. `count_occurrences([1, 2, 3, 2, 4], 2)` should return `2`.
+2. `count_occurrences([1, 1, 1], 1)` should return `3`.
+3. `count_occurrences([1, 2, 3], 4)` should return `0`.
+
+#### Solution:
+
+```python
+def count_occurrences(lst, val):
+    return lst.count(val)
+
+import unittest
+
+class TestCountOccurrences(unittest.TestCase):
+    def test_count_occurrences(self):
+        self.assertEqual(count_occurrences([1, 2, 3, 2, 4], 2), 2)
+        self.assertEqual(count_occurrences([1, 1, 1], 1), 3)
+        self.assertEqual(count_occurrences([1, 2, 3], 4), 0)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 42. **Convert a List of Strings to Uppercase**
+
+#### Question:
+Write a function `to_uppercase(lst)` that converts all strings in a list to uppercase.
+
+#### Tests:
+1. `to_uppercase(["hello", "world"])` should return `["HELLO", "WORLD"]`.
+2. `to_uppercase(["python", "rocks"])` should return `["PYTHON", "ROCKS"]`.
+3. `to_uppercase(["a", "b", "c"])` should return `["A", "B", "C"]`.
+
+#### Solution:
+
+```python
+def to_uppercase(lst):
+    return [x.upper() for x in lst]
+
+import unittest
+
+class TestToUppercase(unittest.TestCase):
+    def test_to_uppercase(self):
+        self.assertEqual(to_uppercase(["hello", "world"]), ["HELLO", "WORLD"])
+        self.assertEqual(to_uppercase(["python", "rocks"]), ["PYTHON", "ROCKS"])
+        self.assertEqual(to_uppercase(["a", "b", "c"]), ["A", "B", "C"])
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 43. **Find the Sum of Digits of a Number**
+
+#### Question:
+Write a function `sum_digits(n)` that returns the sum of the digits of a number `n`.
+
+#### Tests:
+1. `sum_digits(123)` should return `6`.
+2. `sum_digits(987)` should return `24`.
+3. `sum_digits(0)` should return `0`.
+
+#### Solution:
+
+```python
+def sum_digits(n):
+    return sum(int(digit) for digit in str(n))
+
+import unittest
+
+class TestSumDigits(unittest.TestCase):
+    def test_sum_digits(self):
+        self.assertEqual(sum_digits(123), 6)
+        self.assertEqual(sum_digits(987), 24)
+        self.assertEqual(sum_digits(0), 0)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 44. **Find the Prime Numbers in a List**
+
+#### Question:
+Write a function `find_primes(lst)` that returns a list of all prime numbers in the input list `lst`.
+
+#### Tests:
+1. `find_primes([1, 2, 3, 4, 5])` should return `[2, 3, 5]`.
+2. `find_primes([6, 8, 10])` should return `[]`.
+3. `find_primes([11, 13, 17])` should return `[11, 13, 17]`.
+
+#### Solution:
+
+```python
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def find_primes(lst):
+    return [num for num in lst if is_prime(num)]
+
+import unittest
+
+class TestFindPrimes(unittest.TestCase):
+    def test_find_primes(self):
+        self.assertEqual(find_primes([1, 2, 3, 4, 5]), [2, 3, 5])
+        self.assertEqual(find_primes([6, 8, 10]), [])
+        self.assertEqual(find_primes([11, 13, 17]), [11, 13, 17])
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 45. **Reverse a String**
+
+#### Question:
+Write a function `reverse_string(s)` that reverses a given string `s`.
+
+#### Tests:
+1. `reverse_string("hello")` should return `"olleh"`.
+2. `reverse_string("world")` should return `"dlrow"`.
+3. `reverse_string("python")` should return `"nohtyp"`.
+
+#### Solution:
+
+```python
+def reverse_string(s):
+    return s[::-1]
+
+import unittest
+
+class TestReverseString(unittest.TestCase):
+    def test_reverse_string(self):
+        self.assertEqual(reverse_string("hello"), "olleh")
+        self.assertEqual(reverse_string("world"), "dlrow")
+        self.assertEqual(reverse_string("python"), "nohtyp")
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 46. **Find the Intersection of Two Sets**
+
+#### Question:
+Write a function `set_intersection(set1, set2)` that returns the intersection of two sets.
+
+#### Tests:
+1. `set_intersection({1, 2, 3}, {3, 4, 5})` should return `{3}`.
+2. `set_intersection({10, 20}, {30, 40})` should return `{}`.
+3. `set_intersection({1, 2, 3}, {2, 3, 4})` should return `{2, 3}`.
+
+#### Solution:
+
+```python
+def set_intersection(set1, set2):
+    return set1 & set2
+
+import unittest
+
+class TestSetIntersection(unittest.TestCase):
+    def test_set_intersection(self):
+        self.assertEqual(set_intersection({1, 2, 3}, {3, 4, 5}), {3})
+        self.assertEqual(set_intersection({10, 20}, {30, 40}), set())
+        self.assertEqual(set_intersection({1, 2, 3}, {2, 3, 4}), {2, 3})
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 47. **Check if a Number is a Perfect Number**
+
+#### Question:
+Write a function `is_perfect_number(n)` that checks if a number is a perfect number. A perfect number is a number that is equal to the sum of its proper divisors.
+
+#### Tests:
+1. `is_perfect_number(6)` should return `True`.
+2. `is_perfect_number(28)` should return `True`.
+3. `is_perfect_number(10)` should return `False`.
+
+#### Solution:
+
+```python
+def is_perfect_number(n):
+    divisors_sum = sum(i for i in range(1, n) if n % i == 0)
+    return divisors_sum == n
+
+import unittest
+
+class TestIsPerfectNumber(unittest.TestCase):
+    def test_is_perfect_number(self):
+        self.assertTrue(is_perfect_number(6))
+        self.assertTrue(is_perfect_number(28))
+        self.assertFalse(is_perfect_number(10))
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 48. **Find the Length of the Longest Word in a String**
+
+#### Question:
+Write a function `longest_word_length(s)` that returns the length of the longest word in a string `s`.
+
+#### Tests:
+1. `longest_word_length("hello world")` should return `5`.
+2. `longest_word_length("python programming")` should return `11`.
+3. `longest_word_length("a b c d")` should return `1`.
+
+#### Solution:
+
+```python
+def longest_word_length(s):
+    words = s.split()
+    return len(max(words, key=len))
+
+import unittest
+
+class TestLongestWordLength(unittest.TestCase):
+    def test_longest_word_length(self):
+        self.assertEqual(longest_word_length("hello world"), 5)
+        self.assertEqual(longest_word_length("python programming"), 11)
+        self.assertEqual(longest_word_length("a b c d"), 1)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 49. **Remove Duplicates from a List**
+
+#### Question:
+Write a function `remove_duplicates(lst)` that removes duplicates from a list and returns the unique elements.
+
+#### Tests:
+1. `remove_duplicates([1, 2, 2, 3])` should return `[1, 2, 3]`.
+2. `remove_duplicates([10, 10, 10])` should return `[10]`.
+3. `remove_duplicates([5, 6, 7, 7, 8])` should return `[5, 6, 7, 8]`.
+
+#### Solution:
+
+```python
+def remove_duplicates(lst):
+    return list(set(lst))
+
+import unittest
+
+class TestRemoveDuplicates(unittest.TestCase):
+    def test_remove_duplicates(self):
+        self.assertEqual(remove_duplicates([1, 2, 2
+
+, 3]), [1, 2, 3])
+        self.assertEqual(remove_duplicates([10, 10, 10]), [10])
+        self.assertEqual(remove_duplicates([5, 6, 7, 7, 8]), [5, 6, 7, 8])
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+### 50. **Generate Fibonacci Sequence**
+
+#### Question:
+Write a function `fibonacci(n)` that generates the first `n` numbers in the Fibonacci sequence.
+
+#### Tests:
+1. `fibonacci(5)` should return `[0, 1, 1, 2, 3]`.
+2. `fibonacci(3)` should return `[0, 1, 1]`.
+3. `fibonacci(8)` should return `[0, 1, 1, 2, 3, 5, 8, 13]`.
+
+#### Solution:
+
+```python
+def fibonacci(n):
+    fib_sequence = [0, 1]
+    for i in range(2, n):
+        fib_sequence.append(fib_sequence[i - 1] + fib_sequence[i - 2])
+    return fib_sequence[:n]
+
+import unittest
+
+class TestFibonacci(unittest.TestCase):
+    def test_fibonacci(self):
+        self.assertEqual(fibonacci(5), [0, 1, 1, 2, 3])
+        self.assertEqual(fibonacci(3), [0, 1, 1])
+        self.assertEqual(fibonacci(8), [0, 1, 1, 2, 3, 5, 8, 13])
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+This concludes questions 41-50. Would you like to explore more questions, or would you like assistance with something else?
