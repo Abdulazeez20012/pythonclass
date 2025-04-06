@@ -1,0 +1,374 @@
+/* ====== Updated Color Palette ====== */
+:root {
+    /* Primary Colors */
+    --primary: #3a86ff;      /* Vibrant blue */
+    --primary-dark: #2667cc; /* Darker blue */
+    --primary-light: #a7c7ff; /* Light blue */
+    
+    /* Secondary Colors */
+    --secondary: #4cc9f0;    /* Sky blue */
+    --accent: #f72585;       /* Pink accent */
+    --success: #4ade80;      /* Green */
+    --warning: #fbbf24;      /* Amber */
+    --danger: #ef4444;       /* Red */
+    
+    /* Neutrals */
+    --white: #ffffff;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-700: #334155;
+    --gray-900: #0f172a;
+    --black: #000000;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, #b5179e 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Border Radius */
+    --rounded-sm: 0.25rem;
+    --rounded-md: 0.5rem;
+    --rounded-lg: 1rem;
+    --rounded-xl: 1.5rem;
+    --rounded-full: 9999px;
+  }
+  
+  /* ====== Base Styles ====== */
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--gray-900);
+    background-color: var(--gray-50);
+    line-height: 1.6;
+  }
+  
+  /* ====== Header ====== */
+  header {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  
+  header .container {
+    padding: 1rem 2rem;
+  }
+  
+  /* Logo */
+  header .flex.items-center i {
+    color: var(--primary);
+    transition: transform 0.3s ease;
+  }
+  
+  header .flex.items-center:hover i {
+    transform: scale(1.1);
+  }
+  
+  /* Navigation */
+  nav ul li a {
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  /* User Menu */
+  #userMenuButton {
+    transition: all 0.2s ease;
+  }
+  
+  #userMenuButton:hover {
+    color: var(--primary);
+  }
+  
+  /* ====== Hero Section ====== */
+  #home {
+    background: var(--gradient-primary);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+  }
+  
+  #home .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  #home h2 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #home p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+  
+  /* ====== Symptom Cards ====== */
+  .card {
+    background: var(--white);
+    border-radius: var(--rounded-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-200);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .card-body i {
+    color: var(--primary);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .card-body i {
+    transform: scale(1.1);
+  }
+  
+  /* ====== Doctor Cards ====== */
+  #doctorsList .doctor-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .doctor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--gradient-primary);
+  }
+  
+  .doctor-card .doctor-image {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .doctor-card:hover .doctor-image {
+    transform: scale(1.05);
+  }
+  
+  /* ====== Appointment Booking ====== */
+  #appointments .card {
+    transition: all 0.3s ease;
+  }
+  
+  #appointments .card:hover {
+    border-color: var(--primary);
+  }
+  
+  .calendar-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    transition: all 0.2s ease;
+  }
+  
+  .calendar-day:hover {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+  }
+  
+  .calendar-day.selected {
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+  }
+  
+  .time-slot {
+    padding: 0.75rem;
+    transition: all 0.2s ease;
+  }
+  
+  .time-slot:hover {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+  }
+  
+  .time-slot.selected {
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+  }
+  
+  /* ====== Buttons ====== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: var(--rounded-md);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .btn:hover::after {
+    opacity: 1;
+  }
+  
+  .btn-primary {
+    background: var(--primary);
+    color: var(--white);
+  }
+  
+  .btn-primary:hover {
+    background: var(--primary-dark);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+  
+  .btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+  }
+  
+  /* ====== Footer ====== */
+  footer {
+    background: var(--gray-900);
+    color: var(--gray-200);
+  }
+  
+  footer a:hover {
+    color: var(--primary-light);
+  }
+  
+  footer .border-t {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* ====== Modal ====== */
+  #confirmationModal {
+    backdrop-filter: blur(4px);
+  }
+  
+  #confirmationModal > div {
+    animation: modalEnter 0.3s ease-out;
+  }
+  
+  @keyframes modalEnter {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ====== Responsive Design ====== */
+  @media (max-width: 768px) {
+    #home h2 {
+      font-size: 2.5rem;
+    }
+    
+    .grid-cols-2 {
+      grid-template-columns: 1fr;
+    }
+    
+    .lg\:grid-cols-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* ====== Animations ====== */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  /* ====== Utility Classes ====== */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .section {
+    padding: 5rem 0;
+  }
+  
+  .section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 3rem;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    margin-top: 1rem;
+    border-radius: 2px;
+  }
